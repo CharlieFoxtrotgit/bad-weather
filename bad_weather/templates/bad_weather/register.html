@@ -6,17 +6,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         
-        <title>Index</title>
+        <title>Register</title>
 
     </head>
 
     <body>
-        <h1>Bad Weather</h1>
-        <h3>Historical Weather Analysis</h3>
-        <form action="{% url 'index' %}" method="POST">
+        <h1>Register</h1>
+        <form action="{% url 'register' %}" method="POST">
             {% csrf_token %}
-            {{queryform}}
-            <input type="submit">
+            {{ register_form }}
+            <input type="submit" value="register">
         </form>
 
         
@@ -25,6 +24,3 @@
 
 
 </html>
-
-
-
