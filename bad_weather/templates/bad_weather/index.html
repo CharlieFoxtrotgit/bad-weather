@@ -19,6 +19,10 @@
             <input type="submit">
         </form>
 
+        {% if user.is_authenticated %}
+        <h2>Logged in!</h2>
+        {% endif %}
+
         
 
     </body>

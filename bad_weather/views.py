@@ -3,6 +3,8 @@ from datetime import datetime
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from meteostat import Point, Stations, Daily
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import AuthenticationForm
 
 from .forms import QueryForm, RegisterForm
 
@@ -44,3 +46,17 @@ def register(request):
         return render(request, "bad_weather/register.html", {
             'register_form': register_form
         })
+
+
+# def login(request):
+#     if request.method == "POST":
+#         bound_authenticationform = AuthenticationForm(request.POST)
+        
+#         if bound_authenticationform.is_valid():
+#             user = authenticate(request, username=bound_authenticationform.username)
+
+#     else:
+#         authenticationform = AuthenticationForm()
+#         return render(request, 'bad_weather/login.html', {
+#             'authenticationform': authenticationform
+#         })
