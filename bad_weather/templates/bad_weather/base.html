@@ -14,7 +14,8 @@
         <div id="menu_bar">
             <a href="{% url 'index' %}">Bad Weather</a>
             {% if user.is_authenticated %}
-            <a>logout</a>
+            Logged in as {{ user.username }}
+            <a href="{% url 'logout' %}">logout</a>
 
             {% else %}
             <a href="{% url 'login' %}">login</a>
